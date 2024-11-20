@@ -1,0 +1,24 @@
+.plant {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login {
+    display:flexbox;
+    float: right;
+
+}
+
+.text1 {
+    border-radius: 20%;
+    text-decoration-color: green;
+}
+
+.text2 {
+    border-radius: 20%;
+    text-decoration-color: green;
+}

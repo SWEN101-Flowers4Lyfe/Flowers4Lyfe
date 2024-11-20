@@ -3,17 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        img {
-            position: absolute;
-            top: 0%;
-            left: 0%;
-            width: 50%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    </style>
+    <link rel="stylesheet" href = "login.css">
     <title>Login Page</title>
 </head>
 <body style="background-color:#ffffff;">
@@ -21,7 +11,29 @@
     <img 
         src="potted plant.png" 
         alt="Potted Plant"
+        class="plant"
     >
+
+    <div class = "login">
+        <label for = "text1">
+        Email:
+
+        </label>
+        <br>
+        <input tyoe = "text" id = "text1" class = "text1">
+        <br>
+        <label for = "text2">
+            Password:
+
+        </label>
+        <br>
+        <input tyoe = "text" id = "text2" class = "text2">
+        <br>
+        
+        <button type="button">Log in</button>
+
+    </div>
+    
 
     <footer>
         <p>&copy; Made by Thinh, Hayden, Vlad.</p>
