@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowers4Lyfe</title>
     <style>
+        /* General Body Styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -12,14 +13,42 @@
             flex-direction: column;
             height: 100vh;
         }
+        /* Preferences Section */
+        .preferences-info {
+            display: none; /* Hidden by default */
+        }
+
+        .preferences-info .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Apply Background Color and Font Dynamically */
+        body.light {
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        body.dark {
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        body.color-blind {
+            filter: grayscale(100%) contrast(200%);
+        }
+
+
+        /* Header Styles */
         .header {
-            display: flex;
-            align-items: center;
-            background-color: #595959;
-            color: aliceblue;
-            padding: 10px 20px;
-            height: 20vh;
-            box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        background-color: #595959;
+        color: aliceblue;
+        padding: 10px 20px;
+        height: 100px; /* Fixed height */
+        box-sizing: border-box;
+        flex-shrink: 0; /* Prevent shrinking */
         }
         .header h1 {
             margin: 0;
@@ -32,12 +61,16 @@
             width: 70px;
             margin-left: auto;
         }
+
+        /* Main Layout Styles */
         .main {
             display: flex;
             flex: 1;
         }
+
+        /* Sidebar Styles */
         .sidebar {
-            background-color:rgb(190, 190, 190);
+            background-color: rgb(190, 190, 190);
             width: 20%;
             padding: 20px;
             box-sizing: border-box;
@@ -45,7 +78,8 @@
         }
         .sidebar ul {
             list-style: none;
-            padding: 30;
+            padding: 0;
+            margin: 0;
         }
         .sidebar li {
             color: black;
@@ -53,9 +87,15 @@
             margin: 40px 0;
             cursor: pointer;
         }
-        .sidebar li:hover {
+        .sidebar a {
+            text-decoration: none;
+            color: black;
+        }
+        .sidebar a:hover {
             text-decoration: underline;
         }
+
+        /* Content Area Styles */
         .content {
             flex: 1;
             background-color: #f4f4f4;
@@ -65,38 +105,49 @@
             justify-content: center;
             align-items: center;
         }
+
+        /* Form Container */
         .form-container {
             width: 80%;
+            max-width: 600px;
             background-color: #ffffff;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         .form-container h2 {
             text-align: center;
             margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
         }
+
+        /* Form Group Styles */
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
+            font-size: 14px;
+            color: #555;
         }
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
+            font-size: 14px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
+            background-color: #f9f9f9;
         }
         .form-group input:focus,
         .form-group select:focus {
-            outline: none;
             border-color: #007BFF;
-            box-shadow: 0 0 5px rgba(43, 255, 0, 0.5);
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
         .form-group .form-row {
             display: flex;
@@ -105,52 +156,203 @@
         .form-group .form-row .form-column {
             flex: 1;
         }
+
+        /* Submit Button */
         .submit-btn {
             display: block;
             width: 100%;
-            padding: 10px;
+            padding: 12px;
+            font-size: 16px;
             background-color: #007BFF;
-            color: white;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
         .submit-btn:hover {
             background-color: #30b300;
         }
+
+        /* Section Visibility Control */
+        .hidden {
+            display: none;
+        }
+
+        /* Account Settings Section */
+        .account-info {
+            display: none; /* Hidden by default */
+        }
+
+        /* Notifications Section */
+        .notifications-info {
+            display: none; /* Hidden by default */
+        }
+
+        /* Preferences Section */
+        .preferences-info {
+            display: none; /* Hidden by default */
+        }
+
+        /* Handle Account Settings View */
+        #account-settings:target ~ .main .content .account-info {
+            display: block; /* Show Account Settings when targeted */
+        }
+
+        #account-settings:target ~ .main .content .notifications-info,
+        #account-settings:target ~ .main .content .preferences-info {
+            display: none; /* Hide others when Account Settings is shown */
+        }
+
+        /* Handle Notifications View */
+        #notifications:target ~ .main .content .notifications-info {
+            display: block; /* Show Notifications when targeted */
+        }
+
+        #notifications:target ~ .main .content .account-info,
+        #notifications:target ~ .main .content .preferences-info {
+            display: none; /* Hide others when Notifications is shown */
+        }
+
+        /* Handle Preferences View */
+        #preferences:target ~ .main .content .preferences-info {
+            display: block; /* Show Preferences when targeted */
+        }
+
+        #preferences:target ~ .main .content .account-info,
+        #preferences:target ~ .main .content .notifications-info {
+            display: none; /* Hide others when Preferences is shown */
+        }
+
+        /* Notification Item Styles */
+        .notification-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .notification-item label {
+            margin-right: 10px;
+        }
+
+        .notification-item input[type="checkbox"] {
+            width: 50px;
+            height: 25px;
+            position: relative;
+            appearance: none;
+            background-color: #ccc;
+            outline: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .notification-item input[type="checkbox"]::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .notification-item input[type="checkbox"]:checked {
+            background-color: #007BFF;
+        }
+
+        .notification-item input[type="checkbox"]:checked::before {
+            transform: translateX(25px);
+        }
     </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve saved preferences from localStorage
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const savedBgColor = localStorage.getItem('bgColor') || '#ffffff';
+            const savedFont = localStorage.getItem('font') || 'Arial';
+            const savedColorBlindness = localStorage.getItem('colorBlindness') === 'true';
+    
+            // Apply saved preferences to the page
+            document.body.classList.add(savedTheme);
+            document.body.style.backgroundColor = savedBgColor;
+            document.body.style.fontFamily = savedFont;
+            if (savedColorBlindness) {
+                document.body.classList.add('color-blind');
+            }
+    
+            // Set initial values in the form
+            document.getElementById('theme').value = savedTheme;
+            document.getElementById('bg-color').value = savedBgColor;
+            document.getElementById('font').value = savedFont;
+            document.getElementById('color-blindness').checked = savedColorBlindness;
+    
+            // Handle form submission
+            document.querySelector('.preferences-info form').addEventListener('submit', function (e) {
+                e.preventDefault();
+    
+                // Get selected values
+                const theme = document.getElementById('theme').value;
+                const bgColor = document.getElementById('bg-color').value;
+                const font = document.getElementById('font').value;
+                const colorBlindness = document.getElementById('color-blindness').checked;
+    
+                // Save preferences to localStorage
+                localStorage.setItem('theme', theme);
+                localStorage.setItem('bgColor', bgColor);
+                localStorage.setItem('font', font);
+                localStorage.setItem('colorBlindness', colorBlindness);
+    
+                // Apply preferences
+                document.body.classList.remove('light', 'dark', 'color-blind');
+                document.body.classList.add(theme);
+                document.body.style.backgroundColor = bgColor;
+                document.body.style.fontFamily = font;
+                if (colorBlindness) {
+                    document.body.classList.add('color-blind');
+                }
+            });
+        });
+    </script>
+    
 </head>
 <body>
     <!-- Header -->
     <div class="header">
         <h1>Flowers4Lyfe</h1>
-        <h2>library</h2>
-        <h2>community</h2>
-        <h2>leaderboard</h2>
+        <h2>Library</h2>
+        <h2>Community</h2>
+        <h2>Leaderboard</h2>
         <img src="/path/to/your/image.jpg" alt="Cacti">
-<<<<<<< HEAD
-        "picture here"
-=======
->>>>>>> 2fdec71ce9a2d7f52716cb9ef3b70c682cc300f6
     </div>
 
-    <!-- Main Area -->
+    <!-- Sidebar and Main Area -->
+    <a id="notifications"></a>
+    <a id="account-settings"></a>
+    <a id="preferences"></a>
     <div class="main">
         <!-- Sidebar -->
         <div class="sidebar">
             <ul>
-                <li style="pointer-events: none;">Account Settings</li>
-                <li>Notifications</li>
-                <li>Preferences</li>
-                <li>Password</li>
+                <li><a href="#account-settings">Account Settings</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="#preferences">Preferences</a></li>
             </ul>
         </div>
 
-        <!-- Content Area with Form -->
+        <!-- Content Area -->
         <div class="content">
-            <div class="form-container">
-                <h2>Account information</h2>
+            <!-- Account Information -->
+            <div class="form-container account-info">
+                <h2>Account Information</h2>
                 <form>
                     <div class="form-group">
                         <label for="first-name">First Name</label>
@@ -190,10 +392,76 @@
                             <option value="united-states">United States</option>
                         </select>
                     </div>
-                    
-                    
                     <button type="submit" class="submit-btn">Update Account</button>
                 </form>
+            </div>
+
+            <!-- Notifications -->
+            <div class="form-container notifications-info">
+                <h2>Notifications</h2>
+                <form>
+                    <div class="notification-item">
+                        <label for="watering-plant">Watering Plant</label>
+                        <input type="checkbox" id="watering-plant" name="watering-plant">
+                    </div>
+                    <div class="notification-item">
+                        <label for="water-plant-day">Water Plant Within Day</label>
+                        <input type="checkbox" id="water-plant-day" name="water-plant-day">
+                    </div>
+                    <div class="notification-item">
+                        <label for="remind-streak">Remind About Streak</label>
+                        <input type="checkbox" id="remind-streak" name="remind-streak">
+                    </div>
+                    <div class="notification-item">
+                        <label for="remind-losing-plant">Remind About Losing a Plant</label>
+                        <input type="checkbox" id="remind-losing-plant" name="remind-losing-plant">
+                    </div>
+                    <button type="submit" class="submit-btn">Save Notifications Settings</button>
+                </form>
+                <a href="#account-settings" style="text-decoration: none; color: #007BFF; display: block; margin-top: 20px;">← Back to Account Settings</a>
+            </div>
+
+            <!-- Preferences -->
+            <div class="form-container preferences-info">
+                <h2>Preferences</h2>
+                <form>
+                    <!-- Theme Selection -->
+                    <div class="form-group">
+                        <label for="theme">Theme</label>
+                        <select id="theme" name="theme" required>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+            
+                    <!-- Background Color Selection -->
+                    <div class="form-group">
+                        <label for="bg-color">Background Color</label>
+                        <input type="color" id="bg-color" name="bg-color" value="#ffffff">
+                    </div>
+            
+                    <!-- Font Selection -->
+                    <div class="form-group">
+                        <label for="font">Font</label>
+                        <select id="font" name="font">
+                            <option value="Arial">Arial</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Verdana">Verdana</option>
+                        </select>
+                    </div>
+            
+                    <!-- Color Blindness Mode -->
+                    <div class="form-group">
+                        <label for="color-blindness">Color Blindness Mode</label>
+                        <input type="checkbox" id="color-blindness" name="color-blindness">
+                    </div>
+            
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">Save Preferences</button>
+                </form>
+            
+                <a href="#notifications" style="text-decoration: none; color: #007BFF; display: block; margin-top: 20px;">← Back to Notifications</a>
             </div>
         </div>
     </div>
