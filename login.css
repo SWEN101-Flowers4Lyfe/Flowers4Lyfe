@@ -1,3 +1,15 @@
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    background-color: red;
+    padding: 10px;
+    grid-template-columns: auto;
+}
+
 .plant {
     position: absolute;
     top: 0%;
@@ -10,6 +22,7 @@
 .login {
     display:flexbox;
     float: right;
+    border: 1px solid rgba(0, 0, 0, 0.8);
 
 }
 
@@ -22,3 +35,4 @@
     border-radius: 20%;
     text-decoration-color: green;
 }
+
