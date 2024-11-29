@@ -36,17 +36,25 @@ body {
 
 .login {
     display:flexbox;
-    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+}
 
+.title {
+    font-size: 60px;
+    font-family: 'Bad Script', cursive;
+    color: rgb(89, 89, 89);
+    text-align: center;
+    position: relative;
+    top: -50px;
 }
 
 .text1 {
     text-decoration-color: green;
     font-size: large;
-    border: 2px solid green;
+    border: 2px solid black;
     margin-bottom: 15px;
     border-radius: 5px;
     padding: 15px;
+    transition: border-color 0.3s ease;
 }
 
 .text2 {
@@ -56,6 +64,12 @@ body {
     margin-bottom: 25px;
     border-radius: 5px;
     padding: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.text1:focus, .text2:focus {
+    border-color: green;
+    outline: none;
 }
 
 button {
