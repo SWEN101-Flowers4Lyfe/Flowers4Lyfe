@@ -68,7 +68,7 @@ body {
 }
 
 .text1:focus, .text2:focus {
-    border-color: green;
+    border-color: lightgreen;
     outline: none;
 }
 
