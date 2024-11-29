@@ -18,12 +18,12 @@ body {
 }
 
 .header h1 {
-    margin: 0;
+    margin: 10px;
+    margin-right: 40px;
 }
 
 .header h2 {
-    margin: 0 20px;
-    cursor: pointer;
+    margin: 30px;
 }
 
 .header img {
