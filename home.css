@@ -26,13 +26,32 @@ body {
     margin: 30px;
 }
 
+.header-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-link h1, .header-link h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.header-link:hover h1, .header-link:hover h2 {
+    color: green;
+}
+
 .header img {
     width: 70px;
     margin-left: auto;
 }
 
 .cacti {
+    position: absolute;
     object-fit: cover;
     border-radius: 50%;
     border-color: black;
+    top: 15px;
+    right: 15px;
 }
