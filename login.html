@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        img {
-            position: absolute;
-            top: 0%;
-            left: 0%;
-            width: 50%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    </style>
+    <link rel="stylesheet" href = "login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
     <title>Login Page</title>
 </head>
 <body style="background-color:#ffffff;">
 
-    <img 
-        src="potted plant.png" 
-        alt="Potted Plant"
-    >
+    
+
+    <div class="grid-container">
+        <div class="left">
+            <img 
+                src="potted plant.png" 
+                alt="Potted Plant"
+                class="plant"
+            >
+        </div>
+        <div class="right">
+            <div class = "login">
+                <h1 class="title">Flowers4Lyfe</h1>
+                <label for = "text1">Email:</label>
+                <br>
+                <input tyoe = "text" id = "text1" class = "text1">
+                <br>
+                <label for = "text2">Password:</label>
+                <br>
+                <input tyoe = "text" id = "text2" class = "text2">
+                <br>
+                <a href="index.html">
+                    <button type="button">Log in</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    
+    
 
     <footer>
         <p>&copy; Made by Thinh, Hayden, Vlad.</p>

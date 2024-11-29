@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100vh;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.login {
+    display:flexbox;
+}
+
+.title {
+    font-size: 60px;
+    font-family: 'Bad Script', cursive;
+    color: rgb(89, 89, 89);
+    text-align: center;
+    position: relative;
+    top: -50px;
+}
+
+.text1 {
+    text-decoration-color: green;
+    font-size: large;
+    border: 2px solid black;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.text2 {
+    text-decoration-color: green;
+    font-size: large;
+    border: 2px solid black;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    padding: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.text1:focus, .text2:focus {
+    border-color: lightgreen;
+    outline: none;
+}
+
+button {
+    background-color: rgb(149, 200, 128);
+    border: 2px solid rgb(149, 200, 128);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 257px;
+}
+
