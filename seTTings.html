@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowers4Lyfe</title>
     <style>
-        /* General Body Styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -14,7 +13,6 @@
             height: 100vh;
         }
 
-        /* Header Styles */
         .header {
             display: flex;
             align-items: center;
@@ -25,16 +23,44 @@
             box-sizing: border-box;
             flex-shrink: 0;
         }
+
         .header h1 {
-            margin: 0;
+            margin: 10px;
+            margin-right: 40px;
         }
+
         .header h2 {
-            margin: 0 20px;
-            cursor: pointer;
+            margin: 30px;
         }
+
         .header img {
             width: 70px;
             margin-left: auto;
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .header-link h1, .header-link h2 {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .header-link:hover h1, .header-link:hover h2 {
+            color: green;
+        }
+
+        .cacti {
+            position: absolute;
+            object-fit: cover;
+            border-radius: 50%;
+            border-color: black;
+            top: 15px;
+            right: 15px;
         }
 
         /* Sidebar Styles */
@@ -192,13 +218,15 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <div class="header">
-        <h1>Flowers4Lyfe</h1>
-        <h2>Library</h2>
-        <h2>Community</h2>
-        <h2>Leaderboard</h2>
-        <img src="cactus.png" alt="Cacti">
+        <a href="home.html" class="header-link"><h1>Flowers4Lyfe</h1></a>
+
+        <a href="library.html" class="header-link"><h2>Library</h2></a>
+        <a href="community.html" class="header-link"><h2>Community</h2></a>
+        <a href="leaderboard.html" class="header-link"><h2>Leaderboard</h2></a>
+        <a href="settings.html">
+            <img src="cactus.png" alt="Cacti" class="cacti">
+        </a>
     </div>
 
     <!-- Sidebar and Main Area -->

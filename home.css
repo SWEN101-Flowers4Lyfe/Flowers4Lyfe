@@ -55,3 +55,27 @@ body {
     top: 15px;
     right: 15px;
 }
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    flex: 3;
+    padding: 20px;
+}
+
+.right-image {
+    width: 100%; /* Make the image take up 100% of the container's width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional rounded corners */
+}
