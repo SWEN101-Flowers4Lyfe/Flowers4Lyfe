@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #595959;
+    color: aliceblue;
+    padding: 10px 20px;
+    height: 100px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header h2 {
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.header img {
+    width: 70px;
+    margin-left: auto;
+}
+
+.cacti {
+    object-fit: cover;
+    border-radius: 50%;
+    border-color: black;
+}
