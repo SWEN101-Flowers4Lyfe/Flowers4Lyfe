@@ -36,18 +36,36 @@ body {
 
 .login {
     display:flexbox;
-    float: right;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
 
 }
 
 .text1 {
-    border-radius: 20%;
     text-decoration-color: green;
+    font-size: large;
+    border: 2px solid green;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 15px;
 }
 
 .text2 {
-    border-radius: 20%;
     text-decoration-color: green;
+    font-size: large;
+    border: 2px solid black;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+button {
+    background-color: rgb(149, 200, 128);
+    border: 2px solid rgb(149, 200, 128);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 257px;
 }
 
