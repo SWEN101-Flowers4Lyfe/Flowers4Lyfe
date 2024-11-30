@@ -1,46 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="library.css">
-    <title>Flowers4Lyfe</title>
+    <title>Document</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #595959;
+            color: aliceblue;
+            padding: 10px 20px;
+            height: 20vh;
+            box-sizing: border-box;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header h2 {
+            margin: 0 20px;
+            cursor: pointer;
+        }
+        .header img {
+            width: 70px;
+            margin-left: auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 450px); /* 3 columns */
+            gap: 10px; /* space between boxes */
+            padding: 20px;
+        }
+
+        /* Style for each box */
+        .grid-item {
+            background-color: #4CAF50;
+            border: 2px solid white;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            height: 450px;
+        }
+
+        /*  Add Plant button */
+        .add-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1; /* Sit on top of everything*/
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+
+        .popup-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 250px;
+        }
+
+        .popup input {
+            width: 90%;
+            padding: 10px; 
+            margin: 10px 0;
+            font-size: 16px;
+            height: 30px; 
+        }
+
+        .popup button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .popup button.cancel-btn {
+            background-color: #f44336;
+        }
+    </style>
 </head>
 
-<body style="background-color:rgb(224, 223, 218)">
-
+<body>
+    <!-- Header -->
     <div class="header">
-        <a href="home.html" class="header-link">
-            <h1>Flowers4Lyfe</h1>
-        </a>
-
-        <a href="library.html" class="header-link">
-            <h2>Library</h2>
-        </a>
-        <a href="community.html" class="header-link">
-            <h2>Community</h2>
-        </a>
-        <a href="leaderboard.html" class="header-link">
-            <h2>Leaderboard</h2>
-        </a>
-        <a href="settings.html">
-            <img src="cactus.png" alt="Cacti" class="cacti">
-        </a>
+        <h1>Flowers4Lyfe</h1>
+        <h2>Library</h2>
+        <h2>Community</h2>
+        <h2>Leaderboard</h2>
+        <img src="/path/to/your/image.jpg" alt="Cacti">
+        "picture here"
     </div>
 
-    <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">7</div>
+    <!-- 3x3 grid of boxes -->
+    <div class="grid-container" id="grid">
+        <div class="grid-item">Plant 1</div>
+        <div class="grid-item">Plant 2</div>
+        <div class="grid-item">Plant 3</div>
+        <div class="grid-item">Plant 4</div>
+        <div class="grid-item">Plant 5</div>
+        <div class="grid-item">Plant 6</div>
+        <div class="grid-item">Plant 7</div>
+        <div class="grid-item">Plant 8</div>
+        <div class="grid-item">Plant 9</div>
     </div>
 
-    
+    <!-- Add Plant Button -->
+    <button class="add-btn" onclick="showPopup()">+</button>
 
+    <!-- Popup for adding a plant -->
+    <div id="plantPopup" class="popup">
+        <div class="popup-content">
+            <h3>Add a New Plant</h3>
+            <input type="text" id="plantInput" placeholder="Enter plant name">
+            <button onclick="createPlant()">Add Plant</button>
+            <button class="cancel-btn" onclick="hidePopup()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('plantPopup').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('plantPopup').style.display = 'none';
+            document.getElementById('plantInput').value = "";  // Clear the input field when canceled
+        }
+
+        function createPlant() {
+            const plantName = document.getElementById('plantInput').value.trim(); // Retrieves input value
+            if (plantName === "") {
+                alert("Please enter a valid plant name.");
+                return;
+            }
+
+            const grid = document.getElementById('grid'); 
+            const newPlant = document.createElement('div')
+            newPlant.classList.add('grid-item'); 
+            newPlant.textContent = plantName; 
+            grid.appendChild(newPlant); 
+            hidePopup(); 
+        }
+    </script>
 </body>
-
 </html>
