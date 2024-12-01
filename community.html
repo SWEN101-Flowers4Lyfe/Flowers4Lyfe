@@ -1,36 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
     <title>Flowers4Lyfe</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #595959;
+            color: aliceblue;
+            padding: 10px 20px;
+            height: 20vh;
+            box-sizing: border-box;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header h2 {
+            margin: 0 20px;
+            cursor: pointer;
+        }
+        .header img {
+            width: 70px;
+            margin-left: auto;
+        }
+        .feed {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .post {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        /* Post header (profile icon + username) */
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .profile-icon img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .username {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Post image */
+        .post-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Caption text */
+        .caption {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+    </style>
 </head>
 
-<body style="background-color:rgb(224, 223, 218)">
-    
-    <div class="header">
-        <a href="home.html" class="header-link">
-            <h1>Flowers4Lyfe</h1>
-        </a>
-
-        <a href="library.html" class="header-link">
-            <h2>Library</h2>
-        </a>
-        <a href="community.html" class="header-link">
-            <h2>Community</h2>
-        </a>
-        <a href="leaderboard.html" class="header-link">
-            <h2>Leaderboard</h2>
-        </a>
-        <a href="settings.html">
-            <img src="cactus.png" alt="Cacti" class="cacti">
-        </a>
+<body>
+     <!-- Header -->
+     <div class="header">
+        <h1>Flowers4Lyfe</h1>
+        <h2>Library</h2>
+        <h2>Community</h2>
+        <h2>Leaderboard</h2>
+        <img src="/path/to/your/image.jpg" alt="Cacti">
+        "picture here"
     </div>
 
-    
+    <!-- Feed (Posts) -->
+    <div class="feed">
+        <!-- Post 1 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-icon">
+                    <img src="https://via.placeholder.com/50" alt="Profile Icon">
+                </div>
+                <span class="username">username1</span>
+            </div>
+            <img src="https://via.placeholder.com/600x400" alt="Post Image" class="post-image">
+            <p class="caption">This is a beautiful flower. 🌸 #flowers #nature</p>
+        </div>
 
+        <!-- Post 2 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-icon">
+                    <img src="https://via.placeholder.com/50" alt="Profile Icon">
+                </div>
+                <span class="username">username2</span>
+            </div>
+            <img src="https://via.placeholder.com/600x400" alt="Post Image" class="post-image">
+            <p class="caption">Another day, another blossom! 🌼 #flowers4lyfe</p>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-icon">
+                    <img src="https://via.placeholder.com/50" alt="Profile Icon">
+                </div>
+                <span class="username">username3</span>
+            </div>
+            <img src="https://via.placeholder.com/600x400" alt="Post Image" class="post-image">
+            <p class="caption">Caught this beautiful flower in full bloom! 🌺 #flowerphotography</p>
+        </div>
+
+        <!-- Add more posts here -->
+    </div>
 </body>
-
 </html>
