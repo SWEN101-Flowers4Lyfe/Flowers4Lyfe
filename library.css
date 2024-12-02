@@ -15,6 +15,7 @@ body {
     height: 100px;
     box-sizing: border-box;
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 .header h1 {
@@ -26,22 +27,19 @@ body {
     margin: 30px;
 }
 
-.header-link {
-    text-decoration: none;
-    color: inherit;
-}
 
-.header-link h1, .header-link h2 {
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    color: white;
-    transition: color 0.3s ease;
-}
 
 .header-link:hover h1, .header-link:hover h2 {
     color: green;
 }
-
+.header a {
+    text-decoration: none;
+    color: white;
+}
+.header a:hover {
+    color: green;
+    transition: color 0.3s ease;
+}
 .header img {
     width: 70px;
     margin-left: auto;
@@ -73,4 +71,82 @@ body {
     padding: 20px;
     font-size: 30px;
     text-align: center;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 450px); /* 3 columns */
+    gap: 10px; /* space between boxes */
+    padding: 20px;
+}
+
+/* Style for each box */
+.grid-item {
+    background-color: #4CAF50;
+    border: 2px solid white;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    height: 450px;
+}
+
+/*  Add Plant button */
+.add-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top of everything*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.popup input {
+    width: 90%;
+    padding: 10px; 
+    margin: 10px 0;
+    font-size: 16px;
+    height: 30px; 
+}
+
+.popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup button.cancel-btn {
+    background-color: #f44336;
 }
