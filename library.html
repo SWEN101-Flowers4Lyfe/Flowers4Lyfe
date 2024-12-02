@@ -29,15 +29,56 @@
         </a>
     </div>
 
-    <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">7</div>
+    <div class="grid-container" id="grid">
+        <div class="grid-item">Plant 1</div>
+        <div class="grid-item">Plant 2</div>
+        <div class="grid-item">Plant 3</div>
+        <div class="grid-item">Plant 4</div>
+        <div class="grid-item">Plant 5</div>
+        <div class="grid-item">Plant 6</div>
+        <div class="grid-item">Plant 7</div>
+        <div class="grid-item">Plant 8</div>
+        <div class="grid-item">Plant 9</div>
     </div>
+    
+    <!-- Add Plant Button -->
+    <button class="add-btn" onclick="showPopup()">+</button>
+    
+    <!-- Popup for adding a plant -->
+    <div id="plantPopup" class="popup">
+        <div class="popup-content">
+            <h3>Add a New Plant</h3>
+            <input type="text" id="plantInput" placeholder="Enter plant name">
+            <button onclick="createPlant()">Add Plant</button>
+            <button class="cancel-btn" onclick="hidePopup()">Cancel</button>
+        </div>
+    </div>
+    
+    <script>
+        function showPopup() {
+            document.getElementById('plantPopup').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('plantPopup').style.display = 'none';
+            document.getElementById('plantInput').value = "";  // Clear the input field when canceled
+        }
+
+        function createPlant() {
+            const plantName = document.getElementById('plantInput').value.trim(); // Retrieves input value
+            if (plantName === "") {
+                alert("Please enter a valid plant name.");
+                return;
+            }
+
+            const grid = document.getElementById('grid');
+            const newPlant = document.createElement('div')
+            newPlant.classList.add('grid-item');
+            newPlant.textContent = plantName;
+            grid.appendChild(newPlant);
+            hidePopup();
+        }
+    </script>
 
     
 
