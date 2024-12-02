@@ -1,36 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
     <title>Flowers4Lyfe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #595959;
+            color: aliceblue;
+            padding: 10px 20px;
+            height: 20vh;
+            box-sizing: border-box;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header h2 {
+            margin: 0 20px;
+            cursor: pointer;
+        }
+        .header img {
+            width: 70px;
+            margin-left: auto;
+        }
+        .feed {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 0 20px;
+            
+        }
+        .post {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 10px;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .profile-icon img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .username {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .caption {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
-<body style="background-color:rgb(224, 223, 218)">
-    
-    <div class="header">
-        <a href="home.html" class="header-link">
-            <h1>Flowers4Lyfe</h1>
-        </a>
-
-        <a href="library.html" class="header-link">
-            <h2>Library</h2>
-        </a>
-        <a href="community.html" class="header-link">
-            <h2>Community</h2>
-        </a>
-        <a href="leaderboard.html" class="header-link">
-            <h2>Leaderboard</h2>
-        </a>
-        <a href="settings.html">
-            <img src="cactus.png" alt="Cacti" class="cacti">
-        </a>
+<body>
+     <div class="header">
+        <h1>Flowers4Lyfe</h1>
+        <h2>Library</h2>
+        <h2>Community</h2>
+        <h2>Leaderboard</h2>
+        <img src="/path/to/your/image.jpg" alt="Cacti">
     </div>
 
+    <div class="feed">
     
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-icon">
+                    <img src="https://via.placeholder.com/50" alt="Profile Icon">
+                </div>
+                <div class="username">username1</div>
+            </div>
+            <p class="caption">Watered 15 plants in the last 2 hours. 🌱</p>
+        </div>
 
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-icon">
+                    <img src="https://via.placeholder.com/50" alt="Profile Icon">
+                </div>
+                <div class="username">username2</div>
+            </div>
+            <p class="caption">Watered 12 plants in the last 3 hours. 🌻</p>
+        </div>
+
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-icon">
+                    <img src="https://via.placeholder.com/50" alt="Profile Icon">
+                </div>
+                <div class="username">username3</div>
+            </div>
+            <p class="caption">Watered 8 plants in the last 1 hour. 🌿</p>
+        </div>
+
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-icon">
+                    <img src="https://via.placeholder.com/50" alt="Profile Icon">
+                </div>
+                <div class="username">username4</div>
+            </div>
+            <p class="caption">Watered 6 plants in 45 minutes. 🌵</p>
+        </div>
+
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-icon">
+                    <img src="https://via.placeholder.com/50" alt="Profile Icon">
+                </div>
+                <div class="username">username5</div>
+            </div>
+            <p class="caption">Watered 3 plants in 20 minutes. 🌸</p>
+        </div>
+
+    </div>
 </body>
-
 </html>
