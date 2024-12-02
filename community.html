@@ -18,11 +18,32 @@
             background-color: #595959;
             color: aliceblue;
             padding: 10px 20px;
-            height: 20vh;
+            height: 100px;
             box-sizing: border-box;
+
         }
         .header h1 {
             margin: 0;
+        }
+        .header a {
+            text-decoration: none;
+            color: white;
+        }
+        .header a:hover {
+            color: green;
+            transition: color 0.3s ease;
+        }
+        .header img {
+            width: 70px;
+            margin-left: auto;
+        }
+        .cacti {
+            position: absolute;
+            object-fit: cover;
+            border-radius: 50%;
+            border-color: black;
+            top: 15px;
+            right: 15px;
         }
         .header h2 {
             margin: 0 20px;
@@ -87,11 +108,10 @@
 <body>
      <!-- Header -->
      <div class="header">
-        <h1>Flowers4Lyfe</h1>
-        <h2>Library</h2>
-        <h2>Community</h2>
-        <img src="/path/to/your/image.jpg" alt="Cacti">
-        "picture here"
+        <h1><a href="home.html">Flowers4Lyfe</a></h1>
+        <h2><a href="library.html">Library</a></h2>
+        <h2><a href="community.html">Community</a></h2>
+        <a href="settings.html"><img src="cactus.png" alt="Cacti" class="cacti"></a>
     </div>
 
     <!-- Feed (Posts) -->
